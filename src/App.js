@@ -104,7 +104,7 @@ function App() {
         <small id="name">
           <a
             className="gitHub-link"
-            href="https://github.com/mdnica/app-weather.git"
+            href="https://github.com/mdnica/weather-react"
             target="_blank"
             rel="noreferrer"
             id="small"
