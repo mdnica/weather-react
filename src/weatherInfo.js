@@ -13,18 +13,6 @@ export default function WeatherInfo(props) {
       <div className="grid">
         <h5 id="weather-description">{props.data.description}</h5>
 
-        <h2>
-          <span id="current-temp">{props.data.temperature}</span>
-          <a href="/" id="celsius">
-            ºC
-          </a>
-          <span id="between">|</span>
-          <a href="/" id="fahrenheit">
-            ºF
-          </a>
-          <Icon iconCode={props.data.icon} size={70} />
-        </h2>
-
         <h6>
           Humidity: <span id="humidity"> {props.data.humidity}</span>%<br />
           Wind: <span id="speed">{props.data.wind}</span> km/h <br />
