@@ -13,34 +13,6 @@ function App() {
           />
         </div>
 
-        <h1 id="city"> London</h1>
-        <h4 id="current-date-time">/</h4>
-
-        <div className="grid">
-          <h5 id="weather-description">Foggy</h5>
-
-          <h2>
-            <span id="current-temp">4</span>
-            <a href="/" id="celsius">
-              ºC
-            </a>
-            <span id="between">|</span>
-            <a href="/" id="fahrenheit">
-              ºF
-            </a>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="/"
-              id="icon"
-            />
-          </h2>
-
-          <h6>
-            Humidity: <span id="humidity"> </span>%<br />
-            Wind: <span id="speed"></span> km/h <br />
-          </h6>
-        </div>
-
         <div className="prediction-list">
           <div className="col">
             <div className="prediction-item">
