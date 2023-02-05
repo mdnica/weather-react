@@ -7,16 +7,24 @@ import Unit from "./Unit";
 export default function WeatherInfo(props) {
   return (
     <div>
-      <h1 id="city">{props.data.city}</h1>
-      <h4 id="current-date-time">{props.data.date}</h4>
-
-      <div className="grid">
-        <h5 id="weather-description">{props.data.description}</h5>
-
-        <h6>
-          Humidity: <span id="humidity"> {props.data.humidity}</span>%<br />
-          Wind: <span id="speed">{props.data.wind}</span> km/h <br />
-        </h6>
+      <h2 className="mb-0"> {props.data.city}</h2>
+      <p className="mb-0">
+        <FormattedDate date={props.data.date} />
+      </p>
+      <p className="text-capitalize">{props.data.description}</p>
+      <div className="row mb-3">
+        <div className="col-6 text-start">
+          <div className="icon-temp">
+            <Icon iconcode={props.data.icon} size={70} />
+            <Unit celsius={props.data.temperature} />
+          </div>
+        </div>
+        <div className="col-6">
+          <div>
+            <p className="mb-0">Humidity: {props.data.humidity}% </p>
+            <p className="mb-0">Wind: {props.data.wind}m/s</p>
+          </div>
+        </div>
       </div>
 
       <Forecast coordinates={props.data.coordinates} />

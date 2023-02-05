@@ -15,26 +15,27 @@ export default function Unit(props) {
 
   if (tempUnit === "celsius") {
     return (
-      <h2>
-        <span className="current-temp">{props.celsius}</span> <a href="/">ºC</a>
-        <span id="between">| </span>
-        <a href="/" onClick={showFahrenheit} className="text-decoration-none">
-          ºF
-        </a>
-        <Icon iconCode={props.data.icon} size={70} />
+      <h2 className="fs-1 ms-3">
+        <span className="temperature">{props.celsius}</span>{" "}
+        <small>
+          °C |{" "}
+          <a href="/" onClick={showFahrenheit} className="text-decoration-none">
+            °F
+          </a>
+        </small>
       </h2>
     );
   } else {
     let fahrenheit = Math.round((props.celsius * 9) / 5 + 32);
     return (
-      <h2>
-        <span className="current-temp">{fahrenheit}</span>{" "}
-        <a href="/" onClick={showCelsius} className="text-decoration-none">
-          ºC
-        </a>{" "}
-        <span id="between">| </span>
-        ºF
-        <Icon iconCode={props.data.icon} size={70} />
+      <h2 className="fs-1 ms-3">
+        <span className="temperature">{fahrenheit}</span>{" "}
+        <small>
+          <a href="/" onClick={showCelsius} className="text-decoration-none">
+            °C
+          </a>{" "}
+          | °F
+        </small>
       </h2>
     );
   }
