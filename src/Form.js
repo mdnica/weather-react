@@ -18,14 +18,17 @@ export default function Form(props) {
       setLongitude(position.coords.longitude);
     });
 
-    let apiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
-    let units = "metric";
-    let currentApiEndPoint = "https://api.openweathermap.org/data/2.5/weather?";
-    let currentLocationApiUrl = `${currentApiEndPoint}lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
-    axios.get(currentLocationApiUrl).then((response) => {
-      setCity(response.data.name);
-      setLocationCity(true);
-    });
+    if (latitude && longitude) {
+      let apiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
+      let units = "metric";
+      let currentApiEndPoint =
+        "https://api.openweathermap.org/data/2.5/weather?";
+      let currentLocationApiUrl = `${currentApiEndPoint}lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+      axios.get(currentLocationApiUrl).then((response) => {
+        setCity(response.data.name);
+        setLocationCity(true);
+      });
+    }
   }, [locationCity, latitude, longitude]);
 
   function handleResponse(response) {

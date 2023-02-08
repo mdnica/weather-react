@@ -1,5 +1,4 @@
 import React from "react";
-import WeatherInfo from "./weatherInfo";
 import "./App.css";
 import Form from "./Form";
 
